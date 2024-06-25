@@ -21,5 +21,8 @@ nel capire quello che oggi provo
 nel sapere chi oggi sono veramente
 adesso so che amo le cose belle
 so che amo tutto quello che la vita mi offre
-e una di quelle sei tu."
+e una di quelle sei tu.";
+
+echo "Testo originale: $paragrafo<br>";
+echo "Lunghezza testo: " . strlen($paragrafo) . " caratteri<br><br>";
 ?>
