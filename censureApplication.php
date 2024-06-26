@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Censura Testo</title>
+</head>
+<body>
+
+<form method="GET" action="">
+    <label for="censura">Parola da censurare:</label>
+    <input type="text" id="censura" name="censura">
+    <input type="submit" value="Censura">
+</form>
+
+
 <?php
 $testo = "Mi spingi oltre i miei limiti
 e sento di vivere appieno la mia stessa vita,
@@ -25,4 +40,23 @@ e una di quelle sei tu.";
 
 echo "Testo originale: $paragrafo<br>";
 echo "Lunghezza testo: " . strlen($paragrafo) . " caratteri<br><br>";
+
+
+$parola_da_censurare = '';
+if (array_key_exists('censura', $_GET) && $_GET['censura'] !== '') {
+    $parola_da_censurare = $_GET['censura'];
+}
+
+if ($parola_da_censurare != '') {
+    $paragrafo_censurato = str_replace($parola_da_censurare, '***', $paragrafo);
+} else {
+    $paragrafo_censurato = $paragrafo;
+}
+
+
+echo "<p>Paragrafo censurato: $paragrafo_censurato</p>";
+echo "<p>Lunghezza censurata: " . strlen($paragrafo_censurato) . " caratteri</p>";
 ?>
+
+</body>
+</html>
